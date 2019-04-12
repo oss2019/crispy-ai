@@ -1,5 +1,7 @@
 # Crispy AI
 
+[![Issues](https://img.shields.io/github/issues-closed/oss2019/CrispyAI.svg?style=flat-square)](https://github.com/oss2019/CrispyAI/issues) [![Pull Requests](https://img.shields.io/github/issues-pr-closed/oss2019/CrispyAI.svg?style=flat-square)](https://github.com/oss2019/CrispyAI/pulls) [![License](https://img.shields.io/apm/l/vim-mode.svg?style=flat-square)](https://github.com/oss2019/CrispyAI/blob/master/LICENSE) [![Gitter](https://img.shields.io/badge/chat-on%20gitter-ff006f.svg?style=flat-square)](#)
+
 Meet Crispy! Your intelligent companion that sits your lectures for you and organizes classroom taught content into short and concise modules.
 She also tries to provide you with live subtitles turning your classroom experience into a [bh]ollywood blockbuster
 
