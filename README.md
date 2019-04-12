@@ -15,7 +15,9 @@ Crispy has bunch of cool features to aid you. [Check them out here](features.md)
   - [Mozilla DeepSpeech](https://github.com/mozilla/DeepSpeech) - [Text to Speech] Built on TensorFlow (FREE)
   - [Microsoft Azure Text Analytics](https://azure.microsoft.com/en-in/services/cognitive-services/text-analytics/) - [Key Phrase Extraction] End-to-end API (PAID)
   - [ParallelDots Keyword Extractor](https://www.paralleldots.com/keyword-extractor) - [Key Phrase Extraction] End-to-end API (PAID)
-  - [ ] Find a FREE Key Phrase Extractor API/library
+  
+## To-Do List
+  - [ ] Find a FREE Key Phrase Extractor API/library (or maybe tweak some existing ones slightly to get it done)
 
 ## Contributions
 We would love contributions to add more features to crispy and make her the coolest companion. See the [guidelines](contributions.md) to know more on how to contribute.
