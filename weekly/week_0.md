@@ -1,4 +1,4 @@
-# Week 1 : Preliminary - Setting Up
+# Week 0 : Preliminary - Setting Up
 
 In the first week, we are going to set up a working environment and get a basic Django app up and running. If you are still new to django, I would suggest following the video tutorials [here](https://www.youtube.com/watch?v=UmljXZIypDc&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p). You will need to know a little python, although, you can easily learn this along the way.
 
@@ -45,4 +45,6 @@ In this step, we will clone the project from GitHub to your computer so that you
 - Open the terminal in the project root folder. Execute `python3 manage.py runserver 8000`
 - Open a browser and goto `localhost:8000`
 - If the site loads without errors, you are ready to start contributing!
+
+Do see the [Contribution Guidelines](https://github.com/oss2019/crispy-ai/contributions.md)
 
