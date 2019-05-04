@@ -16,7 +16,7 @@ Note:
 - Open a terminal, run `pip3 install django`
 
 
-##Step 2 : Configuring GitHub for your project
+## Step 2 : Configuring GitHub for your project
 
 Here is where you get to learn the basics of Git. Currently, you can find the project code [here](https://github.com/oss2019/crispy-ai). You will be able to understand the code structure if you have gone through the videos. Now, before we get this code onto your computer let's first set up git. Open a terminal and execute the commands below
 
