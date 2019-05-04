@@ -11,6 +11,7 @@ Here's what we will be trying to implement in ***Week 1*** -
 - Creating a Home View for users
 - Creating a Base template with a navbar and footer.[Using Bootstrap]
 - Creating a View to register users with email verification.
+- Create a View for resetting User password
 - Creating a Profile model for each user
 - Create a View to see and edit Users Profile
 
