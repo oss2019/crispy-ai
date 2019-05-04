@@ -25,6 +25,8 @@ Here is where you get to learn the basics of Git. Currently, you can find the pr
 3. `git config --global user.name "Your Name"`
 4. `git config --global user.email "youremail@domain.com"`
 
+**Also, you can check out [this](https://learngitbranching.js.org/) cool website where you can learn Git by experimenting.**
+
 ## Step 3 : Cloning the project.
 In this step, we will clone the project from GitHub to your computer so that you can edit and run the server locally. It is good practice to fork the repository into your GitHub account and then pull it locally on your machine.
 
@@ -36,15 +38,16 @@ In this step, we will clone the project from GitHub to your computer so that you
 
 
 ## Step 4 : Opening the project in PyCharm/SublimeText
-- Launch PyCharm or any other editor like sublime text 3. Click Open -> choose the folder 'crispy-ai' where you cloned it in the previous step. (If you get a pycharm name error, rename 'crispy-ai' => 'crispy_ai' and proceed)
+- Launch PyCharm or any other editor like Sublime Text 3. Click Open -> choose the folder 'crispy-ai' where you cloned it in the previous step. (If you get a pycharm name error, rename 'crispy-ai' => 'crispy_ai' and proceed)
 - You might get an error asking you to setup a project interpreter. Goto File -> Settings -> Project -> Project Interpreter -> Click the gear icon and add new interpreter -> install the packages mentioned in [requirements.txt](https://github.com/oss2019/crispy-ai/requirements.txt)
-- You may also run `pip3 install requirements.txt` instead after setting up a virtual environment. [See this link](https://www.digitalocean.com/community/tutorials/how-to-install-the-django-web-framework-on-ubuntu-18-04)
+- You may also run `pip3 install -r requirements.txt` instead after setting up a virtual environment. [See this link](https://www.digitalocean.com/community/tutorials/how-to-install-the-django-web-framework-on-ubuntu-18-04)
 
 
 ## Step 5 : Run the Server
 - Open the terminal in the project root folder. Execute `python3 manage.py runserver 8000`
 - Open a browser and goto `localhost:8000`
 - If the site loads without errors, you are ready to start contributing!
+- In case something's already up on port 8000, you can try shutting down that process or running this django server on a different port.
 
 Do see the [Contribution Guidelines](https://github.com/oss2019/crispy-ai/contributions.md)
 
