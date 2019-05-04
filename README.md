@@ -13,6 +13,7 @@ Crispy has bunch of cool features to aid you. [Check them out here](features.md)
 ## Tools/Libraries which can be used
   - [Facebook wav2letter++](https://github.com/facebookresearch/wav2letter) - [Text to Speech] Built on C++, really fast but takes time to get adjusted to (FREE)
   - [Mozilla DeepSpeech](https://github.com/mozilla/DeepSpeech) - [Text to Speech] Built on TensorFlow (FREE)
+  - [Gnani](https://gnani.ai/SpeechToTextApi) - [Text to Speech] End-to-end API
   - [Microsoft Azure Text Analytics](https://azure.microsoft.com/en-in/services/cognitive-services/text-analytics/) - [Key Phrase Extraction] End-to-end API (PAID)
   - [ParallelDots Keyword Extractor](https://www.paralleldots.com/keyword-extractor) - [Key Phrase Extraction] End-to-end API (PAID)
   
