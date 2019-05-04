@@ -10,6 +10,10 @@ She also tries to provide you with live subtitles turning your classroom experie
 ## Features
 Crispy has bunch of cool features to aid you. [Check them out here](features.md) and feel free to add some more to list through a PR!
 
+## Getting Started
+  - Setting up this repo and installing django - [Here](https://github.com/oss2019/crispy-ai/blob/master/weekly/week_0.md)
+  - Be updated with the Weekly tips [here](https://github.com/oss2019/crispy-ai/tree/master/weekly) so that you bag them issues super fast.
+
 ## Tools/Libraries which can be used
   - [Facebook wav2letter++](https://github.com/facebookresearch/wav2letter) - [Text to Speech] Built on C++, really fast but takes time to get adjusted to (FREE)
   - [Mozilla DeepSpeech](https://github.com/mozilla/DeepSpeech) - [Text to Speech] Built on TensorFlow (FREE)
