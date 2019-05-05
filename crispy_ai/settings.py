@@ -121,6 +121,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
 #Variable to set default login/logout url
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
