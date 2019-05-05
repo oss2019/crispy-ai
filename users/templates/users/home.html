@@ -1,1 +1,24 @@
+<!-- templates/home.html-->
+
+<!--
+This is the implementation of HOME page, with the
+basic login/logout feature.
+
+Todo:
+$ Create a dashboard
+and user page 
+$ user page to be linked with this
+-->
 {% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  Hello {{ user.username }}!
+  <p><a href="{% url 'logout' %}"> Logout</a></p>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">Login</a>
+{% endif %}
+{% endblock %}

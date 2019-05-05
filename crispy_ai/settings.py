@@ -31,13 +31,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'users.apps.UsersConfig', #createsd using 'django-admin startapp' to enable login/logout
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'users' #createsd using 'django-admin startapp' to enable login/logout
+
 ]
 
 MIDDLEWARE = [
@@ -123,5 +125,5 @@ STATIC_URL = '/static/'
 
 
 #Variable to set default login/logout url
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/users/'
+#LOGOUT_REDIRECT_URL = '/'
