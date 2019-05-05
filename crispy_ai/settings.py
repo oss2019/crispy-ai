@@ -125,5 +125,6 @@ STATIC_URL = '/static/'
 
 
 #Variable to set default login/logout url
+
 LOGIN_REDIRECT_URL = '/users/'
 #LOGOUT_REDIRECT_URL = '/'

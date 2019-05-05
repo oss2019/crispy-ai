@@ -22,5 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
     # Created Home Page in users,
-    url('', RedirectView.as_view(url='/users')), #This line should be changed to stop redirection.
+    url('', RedirectView.as_view(url='/users', permanent=False)), #This line should be changed to stop redirection.
 ]
