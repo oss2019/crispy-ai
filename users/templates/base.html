@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html>
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}" />
+
+</head>
+<body>
+  <main>
+    <div class="header">
+      <img id="support_image" src="{% static '195.jpg' %}"/>
+      <h1>Crispy AI</h1>
+    </div>
+    {% block content %}
+
+    {% endblock %}
+  </main>
+</body>
+</html>
