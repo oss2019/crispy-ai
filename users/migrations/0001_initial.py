@@ -2,7 +2,8 @@
 
 from django.conf import settings
 from django.db import migrations, models
-import django.db.models.deletion
+import django.db.models.deletion as deletion
+# Remaned django.db.models.deletion as deletion to statisfy pep
 
 
 class Migration(migrations.Migration):
@@ -17,12 +18,18 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='ProfileModel',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id',
+                 models.AutoField(auto_created=True,
+                                  primary_key=True,
+                                  serialize=False, verbose_name='ID')),
                 ('university', models.CharField(max_length=30)),
                 ('discription', models.CharField(max_length=500)),
                 ('dob', models.DateField()),
                 ('profile_image', models.ImageField(upload_to='')),
-                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('user',
+                 models.OneToOneField(on_delete=deletion.CASCADE,
+                                      to=settings.AUTH_USER_MODEL)),
+                # Remaned django.db.models.deletion as deletion to statisfy pep
             ],
         ),
     ]

@@ -31,9 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'users.apps.UsersConfig', #createsd using 'django-admin startapp' to enable login/logout
-    'baseApp.apps.BaseappConfig', # Created the baseApp to handle all non-authentication related request. 
-
+    # Createsd using 'django-admin startapp' to enable login/logout
+    'users.apps.UsersConfig',
+    # Created the baseApp to handle all non-authentication related request.
+    'baseApp.apps.BaseappConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -58,8 +59,7 @@ ROOT_URLCONF = 'crispy_ai.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -90,18 +90,13 @@ DATABASES = {
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {'NAME': 'django.contrib.auth.password_validation.%s' % validator}
+    for validator in [
+        'UserAttributeSimilarityValidator',
+        'MinimumLengthValidator',
+        'CommonPasswordValidator',
+        'NumericPasswordValidator',
+    ]
 ]
 
 
@@ -125,7 +120,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-#Variable to set default login/logout url
+# Variable to set default login/logout url
 
 LOGIN_REDIRECT_URL = '/users/'
-#LOGOUT_REDIRECT_URL = '/'
+# LOGOUT_REDIRECT_URL = '/'

@@ -19,9 +19,9 @@ from django.conf.urls import include, url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('users/', include('users.urls')),
     # Created Home Page in users,
-
-    #url('', RedirectView.as_view(url='/users/')), <<-- Commented this out, we don't need redirection any more
+    path('users/', include('users.urls')),
+    # url('', RedirectView.as_view(url='/users/')),
+    # Commented this out, we don't need redirection any more
     path('', include('baseApp.urls')),
 ]
