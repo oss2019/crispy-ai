@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
+@login_required(login_url="/users/login/")
+# Custom login url is specified in the decorator.
 def Home(request):
-    if request.user.is_authenticated:
-        return render(request, './users/home.html') #redirect to login page, if not logged in
-    return redirect('./login/')
+    return render(request, './users/home.html')
