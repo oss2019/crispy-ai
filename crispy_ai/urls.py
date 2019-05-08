@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import include, url
-from django.views.generic import RedirectView #Required to redirect to users
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('users/', include('users.urls')),
     # Created Home Page in users,
-    url('', RedirectView.as_view(url='/users', permanent=False)), #This line should be changed to stop redirection.
+    path('users/', include('users.urls')),
+    # url('', RedirectView.as_view(url='/users/')),
+    # Commented this out, we don't need redirection any more
+    path('', include('baseApp.urls')),
 ]
