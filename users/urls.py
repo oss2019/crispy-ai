@@ -9,5 +9,5 @@ urlpatterns = [
     # #login path only created to redirect after registrations
     # path('login',views.login,name='login'),
     #   Register Page
-    path ('register',views.UserRegister,name='register'),
+    path('register', views.UserRegister, name='register'),
 ]
