@@ -24,7 +24,7 @@ def UserRegister(request):
             email = form.cleaned_data.get('email')
             is_valid = validate_email(email, check_mx=True)
             if is_valid:
-                is_valid = validate_email(email,verify=True)
+                is_valid = validate_email(email, verify=True)
                 if is_valid:
                     username = form.cleaned_data.get('username')
                     messages.success(request, f'Account Created for {username}!')
