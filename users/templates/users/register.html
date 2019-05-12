@@ -1,14 +1,11 @@
 {% extends 'base.html' %}
-
-{% block title %}Login{% endblock %}
-
 {% block content %}
 <div class="container">
   <div class="card mx-auto " style="width: 30rem;margin-top: 5%">
   <div class="card-body">
-    <h5 class="card-title">Login</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Here you have to Login into your account</h6>
-     <form method="post" style=" display: inline;" >
+    <h5 class="card-title">Create an account</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Here you have to create an account</h6>
+     <form method="post">
     {% csrf_token %}
     {% for field in form %}
       <p>
@@ -22,14 +19,12 @@
         {% endfor %}
       </p>
     {% endfor %}
-    <button class="btn btn-success" type="submit" >Log In</button>
+    <button class="btn btn-success" type="submit">Register</button>
   </form>
-      <form action="{% url 'register'%}" method="get" style=" display: inline;" >
-          <button class="btn btn-secondary" type="submit"  >Register</button>
-      </form>
 
   </div>
 </div>
 
 </div>
+
 {% endblock %}
