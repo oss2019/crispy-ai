@@ -9,14 +9,14 @@ from django.contrib import messages
 # Create your views here.
 @login_required(login_url="/users/login/")
 # Custom login url is specified in the decorator.
-def Home(request):
+def home(request):
     return render(request, './users/home.html')
 
 # def login(request):
 #     return render(request,'./registration/login.html')
 
 
-def UserRegister(request):
+def register_user(request):
 
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
