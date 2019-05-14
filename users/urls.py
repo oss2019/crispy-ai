@@ -5,9 +5,9 @@ from . import views
 urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     # home page for users
-    path('', views.Home, name='Home'),
+    path('', views.home, name='Home'),
     # #login path only created to redirect after registrations
     # path('login',views.login,name='login'),
     #   Register Page
-    path('register', views.UserRegister, name='register'),
+    path('register', views.register_user, name='register'),
 ]
