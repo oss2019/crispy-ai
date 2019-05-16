@@ -124,3 +124,9 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/users/'
 # LOGOUT_REDIRECT_URL = '/'
+
+
+
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 587
+
