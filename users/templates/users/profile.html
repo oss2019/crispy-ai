@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}User Profile{% endblock %}
+
+{% block content %}
+<div class="container">
+<div class="card mx-auto" style="width: 18rem; margin-top: 5%">
+  <img class="card-img-top" src="{{ MEDIA_ROOT }}{{ user.profilemodel.profile_image.url }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{ user.username }}</h5>
+      <form action="{% url 'edit' %}" method="get">
+          <button class="btn btn-outline-primary"><i class="far fa-edit">Edit</i></button>
+      </form>
+  </div>
+</div>
+</div>
+<div class="container">
+<div class="card mx-auto" style="width: 40rem;margin-top: 10%">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{ user.profilemodel.university }}</li>
+    <li class="list-group-item">{{ user.profilemodel.discription }}</li>
+    <li class="list-group-item">{{ user.profilemodel.dob }}</li>
+  </ul>
+
+</div>
+ <h6 style="margin-left:25% ">If these fields are empty edit your profile</h6>
+</div>
+
+{% endblock %}

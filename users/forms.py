@@ -11,8 +11,14 @@ class UserRegisterForm(UserCreationForm):
         model = User
         fields = ['username', 'email', 'password1', 'password2']
 
-    def save(self, commit=True):
-        user = super(UserRegisterForm, self).save(commit=False)
-        if commit:
-            user.save()
-        return user
+
+class UserEditForm(forms.ModelForm):
+
+    class Meta:
+        model = ProfileModel
+        exclude = ['user']
+    # def save(self, commit=True):
+    #     user = super(UserRegisterForm, self).save(commit=False)
+    #     if commit:
+    #         user.save()
+    #     return user
