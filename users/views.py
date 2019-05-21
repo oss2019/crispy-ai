@@ -27,7 +27,7 @@ def register_user(request):
                 is_valid = validate_email(email, verify=True)
                 if is_valid:
                     username = form.cleaned_data.get('username')
-                    messages.success(request, f'Account Created for {username}!')
+                    messages.success(request, 'Account Created for '+username)
                     form.save()
                     return redirect('Home')
                 else:

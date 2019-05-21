@@ -30,6 +30,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Registered Admin app
+    'admin.apps.AdminConfig',
     # Createsd using 'django-admin startapp' to enable login/logout
     'users.apps.UsersConfig',
     # Created the baseApp to handle all non-authentication related request.
