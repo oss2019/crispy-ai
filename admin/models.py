@@ -2,7 +2,7 @@ from django.db import models
 
 
 # Create your models here.
-class CourseModels(models.Model):
+class CourseModel(models.Model):
     Course_Code = models.CharField(max_length=30)
     Course_Name = models.CharField(max_length=200)
     Professor = models.CharField(max_length=50)
@@ -24,4 +24,4 @@ class LectureModel(models.Model):
     Summary = models.TextField()
     Tags = models.TextField(null=True)
     # JSON Serialized version of the list of tags.
-    Course = models.OneToOneField(CourseModels, on_delete=models.CASCADE)
+    Course = models.OneToOneField(CourseModel, on_delete=models.CASCADE)
