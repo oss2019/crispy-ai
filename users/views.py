@@ -18,7 +18,6 @@ def home(request):
 #     return render(request,'./registration/login.html')
 
 
-
 def register_user(request):
 
     if request.method == 'POST':
@@ -36,12 +35,14 @@ def register_user(request):
         form = UserRegisterForm()
         return render(request, './users/register.html', {'form': form})
 
+
 def user_profile(request):
 
     if request.user.is_authenticated:
         return render(request, './users/profile.html', {'user':  request.user})
     else:
         return render(request, './users/login_please.html')
+
 
 def profile_update(request):
 
@@ -52,7 +53,7 @@ def profile_update(request):
         if form.is_valid():
             profile = form.save(commit=False)
             profile.user = user
-            profile.user.profilemodel.id=user_id
+            profile.user.profilemodel.id = user_id
             profile.save()
             return redirect('profile')
         else:

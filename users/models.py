@@ -10,7 +10,7 @@ class ProfileModel(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     university = models.CharField(max_length=30)
     discription = models.CharField(max_length=500)
-    dob = models.DateField( default=datetime.date.today)
+    dob = models.DateField(default=datetime.date.today)
     profile_image = models.ImageField(upload_to='profile pics', default='media/default.png')
 
     def get_absolute_url(self):
