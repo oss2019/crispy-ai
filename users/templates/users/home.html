@@ -14,11 +14,26 @@ $ user page to be linked with this
 {% block title %}Home{% endblock %}
 
 {% block content %}
-{% if user.is_authenticated %}
-  Hello {{ user.username }}!
-  <p><a href="{% url 'logout' %}"> Logout</a></p>
-{% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">Login</a>
-{% endif %}
+    <div class="container" style="margin-top: 5%;">
+        {% if user.is_authenticated %}
+                <div class="card mx-auto" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title"> Hello {{ user.username }}!</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Welcome</h6>
+                  <form action="{% url 'logout' %}" method="get" style="display:inline;">
+                   <button class="btn btn-success" >Logout</button>
+                  </form>
+
+                  <form action="{% url 'profile' %}" method="get" style="display:inline;">
+                      <button class="btn btn-success" >Profile</button>
+                  </form>
+              {% else  %}
+                <a href="#" class="card-link">Another link</a>
+              </div>
+                </div>
+        {% endif %}
+
+
+
+    </div>
 {% endblock %}

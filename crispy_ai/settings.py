@@ -121,6 +121,10 @@ STATIC_URL = '/static/'
 
 # Variable to set default login/logout url
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'
+
 LOGIN_REDIRECT_URL = '/users/'
 # LOGOUT_REDIRECT_URL = '/'
 
