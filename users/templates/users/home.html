@@ -11,14 +11,18 @@ $ user page to be linked with this
 -->
 {% extends 'base.html' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}
+    <title>login</title>
+{% endblock %}
 
+{% block header %}
+{% endblock %}
 {% block content %}
-{% if user.is_authenticated %}
-  Hello {{ user.username }}!
-  <p><a href="{% url 'logout' %}"> Logout</a></p>
-{% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">Login</a>
-{% endif %}
+    {% if user.is_authenticated %}
+      Hello {{ user.username }}!
+      <p><a href="{% url 'logout' %}"> Logout</a></p>
+    {% else %}
+      <p>You are not logged in</p>
+      <a href="{% url 'login' %}">Login</a>
+    {% endif %}
 {% endblock %}

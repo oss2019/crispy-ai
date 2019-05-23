@@ -124,3 +124,9 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/users/'
 # LOGOUT_REDIRECT_URL = '/'
+
+# STATICFILES_DIRS = (
+#     # os.path.join(BASE_DIR, '/users/static/'),
+# )
+
+STATIC_ROOT = os.path.join(BASE_DIR, '/users/static/')

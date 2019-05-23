@@ -1,0 +1,51 @@
+:root {
+  --background: rgba(0, 214, 170, .85);
+}
+
+.footer {
+    text-align:center;
+    overflow: hidden;
+    background-color: var(--background);
+    position: fixed;
+    bottom: 0;
+    width:100%;
+}
+a:link {
+  text-decoration: none;
+    color:white;
+}
+
+a:visited {
+  text-decoration: none;
+    color:white;
+}
+
+a:hover {
+  text-decoration: underline;
+    color:black;
+}
+
+a:active {
+  text-decoration: underline;
+    color:black;
+}
+.menu--footer {
+    font-size: 14px;
+    font-weight: 400;
+}
+.menu {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.menu .menu__list {
+    list-style: none;
+    margin-right: 60px;
+    padding: 0;
+}
+.menu .menu__item {
+    display: inline-block;
+}
+.menu--footer .menu__item:not(:first-child)::before {
+    content: "|";
+}
+
