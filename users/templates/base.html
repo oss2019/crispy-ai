@@ -13,28 +13,45 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <header>
-      <div class="logo">
-			<a href="#">
-			<img src="{% static '195.jpg' %}" alt="Crispy AI">
-			</a>
-      </div>
-      <h1>Crispy AI</h1>
-      <nav>
-          <ul>
-				<li><a href="{% url  'BaseApp' %}"><i class="fa fa-home"></i></a></li>
-				<li><a href="#"><i class="fa fa-th-large"></i></a></li>
-				<li><a href="/users/"><i class="fa fa-user"></i></a></li>
-				<li><a href="#"><i class="fa fa-eye"></i></a></li>
-          </ul>
-      </nav>
-  </header>
-  <label for="nav-toggle" class="nav-toggle-label">
-      <span>
-      </span>
-  </label>
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <h1>Crispy AI</h1>
+</div>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+  <div class="navbar-header">
+		<a class="navbar-brand" href="#"><img src="{% static '195.jpg' %}" alt="Crispy AI"></a>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="nav navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'BaseApp' %}"><i class="fa fa-home"></i> Home</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-th-large"></i> Courses</a>
+					<ul class="dropdown-menu">
+						<li><a  href="#">Subject 1</a></li>
+						<li><a  href="#">Subject 2</a></li>
+						<li><a  href="#">Subject 3</a></li>
+					</ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-eye"></i> Live</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="/users/"><i class="fa fa-user"></i>Login/Register</a>
+      </li>
+    </ul>
+  </div>
+</nav>
     {% block header %}
 
     {% endblock %}
@@ -47,31 +64,37 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 {#  footer #}
-  <footer class="footer footer--index">
-    <div class="footer__auxiliary">
-		<div class="menu  menu--footer ">
-		  <div class="menu__inner">
-		    <ul class="menu__list">
-		        <li class="menu__item">
-		          <a class="menu__link " href="https://github.com/oss2019/crispy-ai/blob/master/README.md" title="About" >
-		            <span class="menu__link-copy">About</span>
-		          </a>
-		        </li>
-		        <li class="menu__item">
-		          <a class="menu__link " href="#" title="License">
-        		    <span class="menu__link-copy">License</span>
-        		  </a>
-        		</li>
-                <li class="menu__item">
-		          <a class="menu__link " href="https://github.com/oss2019/crispy-ai" title="Become a Contributor">
-        		    <span class="menu__link-copy">Become a Contributor</span>
-        		  </a>
-        		</li>
-    		</ul>
-          </div>
-  		</div>
-	</div>
-   </footer>
+  <footer class="footer mt-auto py-3" id="Footer" >
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9">
+                </div>
+                <div class="col-sm-1">
+                    <a href="#"><h5>About</h5></a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="https://github.com/oss2019/crispy-ai"><h5>Become a Contributor</h5></a>
+                </div>
+            </div>
+        </div>
+        <div class="second-bar">
+           <div class="container">
+                <h1 class="logo"><a href="#">Crispy AI</a></h1>
+                <div class="social-icons">
+                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+                </div>
+            </div>
+        </div>
+  </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</div>
+
+</body>
+</html>
+
 
 </body>
 </html>

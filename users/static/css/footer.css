@@ -2,50 +2,101 @@
   --background: rgba(0, 214, 170, .85);
 }
 
-.footer {
-    text-align:center;
-    overflow: hidden;
-    background-color: var(--background);
-    position: fixed;
-    bottom: 0;
-    width:100%;
+#Footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
 }
-a:link {
-  text-decoration: none;
+
+#Footer {
+    background-color: #3a3f46;
+    color: white;
+}
+
+#Footer .row {
+    margin-bottom: 60px;
+}
+
+#Footer h5 {
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#Footer .logo{
+    margin-top: 10px;
+}
+
+#Footer .second-bar .logo a{
     color:white;
-}
-
-a:visited {
-  text-decoration: none;
-    color:white;
-}
-
-a:hover {
-  text-decoration: underline;
-    color:black;
-}
-
-a:active {
-  text-decoration: underline;
-    color:black;
-}
-.menu--footer {
-    font-size: 14px;
-    font-weight: 400;
-}
-.menu {
-    margin-bottom: 20px;
-    margin-top: 20px;
-}
-.menu .menu__list {
-    list-style: none;
-    margin-right: 60px;
+    font-size: 28px;
+    float: left;
+    font-weight: bold;
+    line-height: 68px;
+    margin: 0;
     padding: 0;
 }
-.menu .menu__item {
-    display: inline-block;
-}
-.menu--footer .menu__item:not(:first-child)::before {
-    content: "|";
+
+#Footer a {
+    color: #d2d1d1;
+    text-decoration: none;
 }
 
+#Footer a:hover,
+#Footer a:focus {
+    text-decoration: none;
+    color: blue;
+}
+
+#Footer .second-bar {
+    text-align: center;
+    background-color: #33373e;
+    text-align: center;
+}
+
+#Footer .second-bar a {
+    font-size: 22px;
+    color: #9fa3a9;
+    padding: 10px;
+    transition: 0.2s;
+    line-height: 68px;
+}
+
+#Footer .second-bar a:hover {
+    text-decoration: none;
+}
+
+#Footer .social-icons {
+    float:right;
+}
+
+
+#Footer .facebook:hover {
+    color: #0077e2;
+}
+
+#Footer .google:hover {
+    color: #ef1a1a;
+}
+
+#Footer .twitter:hover {
+    color: #00aced;
+}
+
+@media screen and (max-width: 767px) {
+    #myFooter {
+        text-align: center;
+    }
+
+    #myFooter .info{
+        text-align: center;
+    }
+}
+
+#Footer{
+   flex: 0 0 auto;
+   -webkit-flex: 0 0 auto;
+}

@@ -117,7 +117,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'users/static/'
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "users/static")
+STATICFILES_DIRS = (
+os.path.join(BASE_DIR, "users/static"),
+)
 
 
 # Variable to set default login/logout url
@@ -125,8 +129,4 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/users/'
 # LOGOUT_REDIRECT_URL = '/'
 
-# STATICFILES_DIRS = (
-#     # os.path.join(BASE_DIR, '/users/static/'),
-# )
 
-STATIC_ROOT = os.path.join(BASE_DIR, '/users/static/')
