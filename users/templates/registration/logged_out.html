@@ -1,8 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %}Login{% endblock %}
+{% block title %}
+    <title>Login</title>{% endblock %}
 
 {% block content %}
-<h2>Logged Out, Thank You</h2>
-<p><a href="{% url 'login' %}">Login again</a></p>
+    <div class="container">
+        <h2>Logged Out, Thank You</h2>
+        <p><a href="{% url 'login' %}">Login again</a></p>
+    </div>
 {% endblock %}
