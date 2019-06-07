@@ -7,28 +7,28 @@
 {% block content %}
 <div class="container">
   <div class="card mx-auto " style="width: 30rem;margin-top: 5%">
-  <div class="card-body">
-    <h5 class="card-title">Login</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Here you have to Login into your account</h6>
-     <form method="post" style=" display: inline;" >
-    {% csrf_token %}
-    {% for field in form %}
-      <p>
-        {{ field.label_tag }}<br>
-        {{ field }}
-        {% if field.help_text %}
-          <small style="color: grey">{{ field.help_text }}</small>
-        {% endif %}
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
-        {% endfor %}
-      </p>
-    {% endfor %}
-    <button class="btn btn-success" type="submit" >Log In</button>
-  </form>
-      <form action="{% url 'register'%}" method="get" style=" display: inline;" >
-          <button class="btn btn-secondary" type="submit"  >Register</button>
-      </form>
+    <div class="card-body">
+        <h5 class="card-title">Login</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Here you have to Login into your account</h6>
+         <form method="post" style=" display: inline;" >
+            {% csrf_token %}
+            {% for field in form %}
+                <p>
+                    {{ field.label_tag }}<br>
+                    {{ field }}
+                    {% if field.help_text %}
+                      <small style="color: grey">{{ field.help_text }}</small>
+                    {% endif %}
+                    {% for error in field.errors %}
+                      <p style="color: red">{{ error }}</p>
+                    {% endfor %}
+                </p>
+            {% endfor %}
+            <button class="btn btn-success" type="submit" >Log In</button>
+         </form>
+         <form action="{% url 'register'%}" method="get" style=" display: inline;" >
+             <button class="btn btn-secondary" type="submit"  >Register</button>
+         </form>
 
   </div>
 </div>
