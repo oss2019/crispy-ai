@@ -12,3 +12,14 @@ img {
   left: 100px;
 }
 
+.jumbotron{
+  background: white;
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  height:100px;
+}
+
+.navbar{
+  height: 75px;
+  margin-top: 0px;
+  padding-top: 0px;
+}
