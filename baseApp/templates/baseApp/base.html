@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html>
+<head>
+    {% block title %}
+
+    {% endblock %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {#    <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">#}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top ">
+    <div class="navbar-header text-white">
+        {#		<a class="navbar-brand" href="#"><img src="{% static '195.jpg' %}" alt="Crispy AI"></a>#}
+        <a class="navbar-brand" href="{% url 'BaseApp' %}">Crispy AI</a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="nav navbar-nav ml-auto">
+
+            {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'Home' %}"><i class="fa fa-home"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-eye"></i> Live</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                       aria-haspopup="true" aria-expanded="false">Settings</a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="{% url 'profile' %}"><i class="fa fa-user"></i> Profile</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout</a>
+                    </div>
+                </li>
+
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register' %}"><i class="fa fa-external-link-square"></i> Register</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+    {% block header %}
+
+    {% endblock %}
+    <div class="mt-5 mb-5 ml-1 mr-1">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+{#  footer #}
+<footer class="footer mt-auto py-3" id="Footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9">
+            </div>
+            <div class="col-sm-1">
+                <a href="#"><h5>About</h5></a>
+            </div>
+            <div class="col-sm-2">
+                <a href="https://github.com/oss2019/crispy-ai"><h5>Become a Contributor</h5></a>
+            </div>
+        </div>
+    </div>
+    <div class="second-bar">
+        <div class="container" class="jumbotron">
+            <h1 class="logo"><a href="#">Crispy AI</a></h1>
+            <div class="social-icons">
+                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+</html>
+

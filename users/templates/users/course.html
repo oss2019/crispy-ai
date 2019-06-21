@@ -1,0 +1,73 @@
+{% extends 'baseApp/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Crispy AI | Home</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="card pt-3 pb-5">
+
+            <div class="row border-bottom">
+                <div class="text-left col-md-8">
+                    <div class="ml-3">
+                        <h3>{{ course.course_code }}: {{ course.course_name }}</h3>
+                    </div>
+                </div>
+                <div class="col-md-4 text-right">
+                    {% if user.is_superuser %}
+                        <a href="{% url 'create_lecture' %}" class="btn btn-info mr-3">Create Lecture</a>
+                    {% endif %}
+                </div>
+
+            </div>
+
+
+            <div class="mt-5 pl-3 pr-3">
+                <h2 class="text-center">Lectures</h2>
+                {% for lecture in lectures %}
+                    <div class="card border-dark mt-4">
+                        <div class="card-header bg-white text-muted">Lecture {{ lecture.lecture_id }}</div>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <div class="row">
+
+                                    <div class="col-md-8">
+                                        {{ lecture.title }}
+                                        <h6>by {{ lecture.course.professor }}</h6>
+                                    </div>
+
+                                    <div class="text-right col-md-4">
+                                        <form action="{% url 'lecture_display' %}" method="POST">
+                                            {% csrf_token %}
+                                            <input type="text" name="lecture_id" value="{{ lecture.id }}" hidden>
+                                            <button class="btn btn-success" type="submit">
+                                                Go to Class
+                                            </button>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </h5>
+                            <p class="card-text">
+                                Tags: {{ lecture.tags }}
+                            </p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+
+        </div>
+    </div>
+
+    </div>
+    {#    Script removes Confirm Form Resubmission dialog #}
+    {#    <script>#}
+    {#    if ( window.history.replaceState ) {#}
+    {#      window.history.replaceState( null, null, window.location.href );#}
+    {#    }#}
+    {#    </script>#}
+{% endblock %}
+

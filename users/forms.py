@@ -5,14 +5,22 @@ from .models import ProfileModel
 
 
 class UserRegisterForm(UserCreationForm):
-    email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')
+    email = forms.EmailField(max_length=254, help_text='Please provide a valid email address.')
 
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
 
-    def save(self, commit=True):
-        user = super(UserRegisterForm, self).save(commit=False)
-        if commit:
-            user.save()
-        return user
+
+class UserUpdateForm(forms.ModelForm):
+    email = forms.EmailField(max_length=254, help_text='Please provide a valid email address.')
+
+    class Meta:
+        model = User
+        fields = ['username', 'email']
+
+
+class ProfileUpdateForm(forms.ModelForm):
+    class Meta:
+        model = ProfileModel
+        fields = ['university', 'bio', 'profile_image']

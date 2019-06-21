@@ -1,6 +1,26 @@
-{% extends 'base.html' %}
-
+{% extends 'baseApp/base.html' %}
+{% load static %}
 {% block title %}
     <title>Home</title>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="card col-md-6 mx-auto">
+            <div class="card-body">
+                <h3 class="card-title">Meet Crispy!</h3>
+                <p class="card-text text-justify">Your intelligent companion that sits your lectures for you and organizes classroom
+                    taught content into short and concise modules. She also tries to provide you with live subtitles
+                    turning your classroom experience into a Hollywood/Bollywood blockbuster
+                    <br><br>
+                    Crispy is Open Source and still under development. If you like us, help us out on GitHub!
+                </p>
+                <div class="text-center">
+                <img class="mx-auto d-block" style="width: 300px;" src="{% static '195.jpg' %}" alt="Card image cap">
+                <a href="https://github.com/oss2019/crispy-ai" class="btn btn-primary">Contribute on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 

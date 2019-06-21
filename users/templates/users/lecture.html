@@ -1,0 +1,66 @@
+{% extends 'baseApp/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Crispy AI | Home</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="card pt-3 pb-5">
+
+            <div class="row border-bottom">
+                <div class="text-left col-md-8">
+                    <div class="ml-3">
+                        <h3>Lecture {{ lecture.lecture_id }}: {{ lecture.title }}</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+            <div class="col-md-6 mt-5 pl-3 pr-3">
+                <div class="card ml-3 mr-3 border-dark mt-4">
+                    <div class="card-header bg-white text-muted">Live Transcript</div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            {{ lecture.live_transcript }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mt-5 pl-3 pr-3">
+                <div class="card ml-3 mr-3 border-dark mt-4">
+                    <div class="card-header bg-white text-muted">Summary</div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            {{ lecture.summary }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mt-5 ml-3 mr-3 pl-3 pr-3">
+                <div class="card border-dark mt-4">
+                    <div class="card-header bg-white text-muted">Tags</div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            {{ lecture.tags }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+    {#    Script removes Confirm Form Resubmission dialog #}
+    {#    <script>#}
+    {#    if ( window.history.replaceState ) {#}
+    {#      window.history.replaceState( null, null, window.location.href );#}
+    {#    }#}
+    {#    </script>#}
+{% endblock %}
+
