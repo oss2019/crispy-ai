@@ -7,6 +7,7 @@ urlpatterns = [
     # home page for users
     path('', views.home, name='Home'),
     path('register/', views.register_user, name='register'),
+    path('profile/', views.profile, name='profile'),
     path('course/', views.course_display, name='course_display'),
     path('course/lectures/', views.lecture_display, name='lecture_display')
 

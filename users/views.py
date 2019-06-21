@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegisterForm
+from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from validate_email import validate_email
 from django.contrib import messages
 from admin.models import CourseModel, LectureModel
@@ -31,6 +31,24 @@ def register_user(request):
     return render(request, 'registration/register.html', {'form': form})
 
 
+@login_required(login_url="/users/login/")
+def profile(request):
+    if request.method == "POST":
+        u_form = UserUpdateForm(request.POST, instance=request.user)
+        p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profilemodel)
+        if u_form.is_valid() and p_form.is_valid():
+            u_form.save()
+            p_form.save()
+            messages.success(request, f'Profile updated successfully!')
+            return redirect('profile')
+    else:
+        u_form = UserUpdateForm(instance=request.user)
+        p_form = ProfileUpdateForm(instance=request.user.profilemodel)
+
+    return render(request, 'users/profile.html', {'u_form': u_form, 'p_form': p_form, 'profile_pic_url': request.user.profilemodel.profile_image.url})
+
+
+@login_required(login_url="/users/login/")
 def course_display(request):
     course = CourseModel.objects.first()
 

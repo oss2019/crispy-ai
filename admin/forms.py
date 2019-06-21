@@ -13,4 +13,4 @@ class CreateLectureForm(forms.ModelForm):
 
     class Meta:
         model = LectureModel
-        fields = '__all__'
+        fields = ['course', 'title', 'tags']

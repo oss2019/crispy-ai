@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import RegisterCourseForm, CreateLectureForm
-from .models import CourseModel
+from .models import CourseModel, LectureModel
 from django.contrib.admin.views.decorators import staff_member_required
 
 
@@ -27,6 +27,9 @@ def create_lecture(request):
     if request.method == "POST":
         form = CreateLectureForm(request.POST)
         if form.is_valid():
+            form = form.save(commit=False)
+            num_lectures = LectureModel.objects.filter(course=form.course).count()
+            form.lecture_id = num_lectures + 1
             form.save()
             return redirect('course_display')
     else:
