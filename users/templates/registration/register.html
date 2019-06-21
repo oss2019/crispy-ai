@@ -1,0 +1,20 @@
+{% extends 'baseApp/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+    <title>Register</title>
+{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="card mx-auto " style="width: 30rem;margin-top: 5%">
+    <div class="card-body">
+      <h5 class="card-title">Create your Account</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Sign Up for AI-Powered Crispy Assistance!</h6>
+        <form method="post">
+          {% csrf_token %}
+          {{ form|crispy }}
+          <button class="btn btn-success" type="submit">Register</button>
+        </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

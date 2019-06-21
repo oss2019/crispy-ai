@@ -1,11 +1,13 @@
-{% extends 'base.html' %}
+{% extends 'baseApp/base.html' %}
 
 {% block title %}
     <title>Login</title>{% endblock %}
 
 {% block content %}
-    <div class="container">
-        <h2>Logged Out, Thank You</h2>
-        <p><a href="{% url 'login' %}">Login again</a></p>
+    <div class="card bg-light">
+        <div class="card-body">
+            <h4 class="card-title">Thank You for using Crispy! We hope to see you back soon.</h4>
+            <p class="card-text">Please use this link to <a href="{% url 'login' %}">Login again</a> to Crispy AI</p>
+        </div>
     </div>
 {% endblock %}

@@ -1,27 +1,28 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 # Create your models here.
 class CourseModel(models.Model):
-    Course_Code = models.CharField(max_length=30)
-    Course_Name = models.CharField(max_length=200)
-    Professor = models.CharField(max_length=50)
-    Duration = models.IntegerField()
-    # NUMBER OF LECTURES
-    Attendees = models.IntegerField()
-    Rating = models.IntegerField()
-    # ANY NUMBER BETWEEN 1 TO 5
+    course_code = models.CharField(max_length=30, blank=False)
+    course_name = models.CharField(max_length=200, blank=False)
+    description = models.CharField(max_length=255)
+    professor = models.CharField(max_length=50)
+    num_lectures = models.IntegerField(default=40)
+    num_enrolled = models.IntegerField(default=40)
+    image_cover = models.ImageField(upload_to='images/')
+    rating = models.DecimalField(default=8.0, max_digits=3, decimal_places=1,
+                                 validators=[MinValueValidator(0.0), MaxValueValidator(10.0)])
 
     def __str__(self):
         # Returns the specific course_code when called by default.
-        return self.Course_Code
+        return self.course_code
 
 
 class LectureModel(models.Model):
-    Lecture_No = models.IntegerField()
-    Title = models.CharField(max_length=100)
-    Live_Transcript = models.TextField()
-    Summary = models.TextField()
-    Tags = models.TextField(null=True)
-    # JSON Serialized version of the list of tags.
-    Course = models.OneToOneField(CourseModel, on_delete=models.CASCADE)
+    course = models.ForeignKey(CourseModel, blank=False, on_delete=models.CASCADE)
+    lecture_id = models.IntegerField()
+    title = models.CharField(max_length=100)
+    live_transcript = models.TextField()
+    summary = models.TextField()
+    tags = models.TextField(null=True)

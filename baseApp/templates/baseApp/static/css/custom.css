@@ -1,0 +1,21 @@
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) {
+    .class-name {font-size: 1rem;}
+  }
+
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    .class-name {font-size: 30px;}
+  }
+
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+      .class-name {
+          font-size: 4rem;
+      }
+  }
+
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1400px) {
+    .class-name {font-size: 1rem;}
+  }

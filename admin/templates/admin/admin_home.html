@@ -16,9 +16,8 @@
                     </div>
                 </div>
             </div>
-            {% if user.is_superuser %}
-                <a href="{% url 'register_course' %}" class="btn btn-info  mx-auto mt-5">Register Course</a>
-            {% endif %}
+
+            <a href="{% url 'register_course' %}" class="   btn btn-info col-1 mx-auto mt-5">Register Course</a>
             <!-- Nav tabs -->
             <ul class="nav nav-tabs">
                 <li class="nav-item">
@@ -42,23 +41,15 @@
                                         <h5 class="card-title border-bottom">{{ course.course_code }}
                                             : {{ course.course_name }}</h5>
                                         <div class="row">
-                                            <h6 class="col-xl-6 text-muted text-left">Prof. {{ course.professor }}</h6>
-                                            <h6 class="col-xl-6 text-muted">
-                                                <div class="float-right text-center col-3  pl-0 pr-0">
-                                                    {{ course.rating }}
-                                                </div>
-                                                <div class="float-right text-center col-2 pl-0 pr-0">
-                                                    <i class="fa fa-star" style="color: orange" aria-hidden="true"></i>
-                                                </div>
+                                            <h6 class="col-6 text-muted text-left">Prof. {{ course.professor }}</h6>
+                                            <h6 class="col-6 text-muted">
+                                                <div class="float-right text-center col-3 pl-0 pr-0">{{ course.Rating }}</div>
+                                                <div class="float-right text-center col-3 pl-0 pr-0"><i class="fa fa-star" aria-hidden="true"></i></div>
                                             </h6>
                                         </div>
                                         <p class="card-text">{{ course.description }}</p>
                                     </div>
-                                    <form class="text-center" action="{% url 'course_display' %}" method="POST">
-                                        {% csrf_token %}
-                                        <input type="text" name="course_id" value="{{ course.id }}" hidden>
-                                        <button class="btn btn-success col-md-10 mb-2 mx-auto" type="submit">View Course</button>
-                                    </form>
+                                    <a class="btn btn-success col-4 mb-2 mx-auto" href="#">View Course</a>
                                 </div>
                             </div>
 
