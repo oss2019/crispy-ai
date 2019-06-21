@@ -45,7 +45,8 @@ def profile(request):
         u_form = UserUpdateForm(instance=request.user)
         p_form = ProfileUpdateForm(instance=request.user.profilemodel)
 
-    return render(request, 'users/profile.html', {'u_form': u_form, 'p_form': p_form, 'profile_pic_url': request.user.profilemodel.profile_image.url})
+    return render(request, 'users/profile.html',
+                  {'u_form': u_form, 'p_form': p_form, 'profile_pic_url': request.user.profilemodel.profile_image.url})
 
 
 @login_required(login_url="/users/login/")

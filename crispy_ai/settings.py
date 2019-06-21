@@ -26,7 +26,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -73,7 +72,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'crispy_ai.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
@@ -83,7 +81,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -97,7 +94,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NumericPasswordValidator',
     ]
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
@@ -118,7 +114,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "baseApp/static")
 STATICFILES_DIRS = (
-os.path.join(BASE_DIR, "users/../baseApp/templates/baseApp/static"),
+    os.path.join(BASE_DIR, "users/../baseApp/templates/baseApp/static"),
 )
 
 # Media Settings
@@ -135,4 +131,3 @@ EMAIL_PORT = 587
 
 # crispy_forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-

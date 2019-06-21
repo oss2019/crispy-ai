@@ -5,7 +5,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -23,7 +22,9 @@ class Migration(migrations.Migration):
                 ('num_lectures', models.IntegerField(default=40)),
                 ('num_enrolled', models.IntegerField(default=40)),
                 ('image_cover', models.ImageField(upload_to='images/')),
-                ('rating', models.DecimalField(decimal_places=1, default=8.0, max_digits=3, validators=[django.core.validators.MinValueValidator(0.0), django.core.validators.MaxValueValidator(10.0)])),
+                ('rating', models.DecimalField(decimal_places=1, default=8.0, max_digits=3,
+                                               validators=[django.core.validators.MinValueValidator(0.0),
+                                                           django.core.validators.MaxValueValidator(10.0)])),
             ],
         ),
         migrations.CreateModel(
