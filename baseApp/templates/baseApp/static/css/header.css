@@ -2,15 +2,15 @@
   --background: rgba(0, 214, 170, .85);
 }
 
-img {
-  position:absolute;
-  height:150px;
-  width:150px;
-  border-radius: 11.25px 37.5px;
-  box-shadow: 3px 6px #888888;
-  top: 0px;
-  left: 100px;
-}
+/*img {*/
+  /*position:absolute;*/
+  /*height:150px;*/
+  /*width:150px;*/
+  /*border-radius: 11.25px 37.5px;*/
+  /*box-shadow: 3px 6px #888888;*/
+  /*top: 0px;*/
+  /*left: 100px;*/
+/*}*/
 
 .jumbotron{
   background: white;

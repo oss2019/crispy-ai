@@ -26,15 +26,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
-    # Registered Admin app
+    'crispy_forms',
     'admin.apps.AdminConfig',
-    # Createsd using 'django-admin startapp' to enable login/logout
     'users.apps.UsersConfig',
-    # Created the baseApp to handle all non-authentication related request.
     'baseApp.apps.BaseappConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -75,7 +72,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'crispy_ai.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
@@ -85,7 +81,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -99,7 +94,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NumericPasswordValidator',
     ]
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
@@ -118,10 +112,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "users/static")
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "baseApp/static")
 STATICFILES_DIRS = (
-os.path.join(BASE_DIR, "users/static"),
+    os.path.join(BASE_DIR, "users/../baseApp/templates/baseApp/static"),
 )
+
+# Media Settings
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Variable to set default login/logout url
 
@@ -130,3 +128,6 @@ LOGIN_REDIRECT_URL = '/users/'
 
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 587
+
+# crispy_forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

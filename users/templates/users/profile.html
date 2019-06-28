@@ -1,0 +1,33 @@
+{% extends 'baseApp/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+    <title>Crispy AI | Register Course</title>
+{% endblock %}
+{% block content %}
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <div class="alert alert-success" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <div class="container">
+        <div class="card mx-auto col-md-6 ">
+            <h5 class="card-title mt-3 ml-3">Profile</h5>
+            <img class="img-card-top mx-auto rounded-circle" src="{{ profile_pic_url }}" alt="profile_picture"
+                 style="height: 300px; width: 300px;">
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ u_form|crispy }}
+                    {{ p_form|crispy }}
+                    <div class="text-center">
+                        <button class="btn btn-success" type="submit">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
