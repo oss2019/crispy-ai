@@ -8,7 +8,7 @@ scraped_data = urllib.request.urlopen('#')
 # example url can be https://en.wikipedia.org/wiki/Artificial_intelligence
 article = scraped_data.read()
 
-parsed_article = bs.BeautifulSoup(article,'lxml')
+parsed_article = bs.BeautifulSoup(article, 'lxml')
 
 paragraphs = parsed_article.find_all('p')
 
@@ -22,7 +22,7 @@ article_text = re.sub(r'\[[0-9]*\]', ' ', article_text)
 article_text = re.sub(r'\s+', ' ', article_text)
 
 # Removing special characters and digits
-formatted_article_text = re.sub('[^a-zA-Z]', ' ', article_text )
+formatted_article_text = re.sub('[^a-zA-Z]', ' ', article_text  )
 formatted_article_text = re.sub(r'\s+', ' ', formatted_article_text)
 
 sentence_list = nltk.sent_tokenize(article_text)
@@ -37,10 +37,10 @@ for word in nltk.word_tokenize(formatted_article_text):
         else:
             word_frequencies[word] += 1
 
-maximum_frequncy = max(word_frequencies.values())
+maximum_frequency = max(word_frequencies.values())
 
 for word in word_frequencies.keys():
-    word_frequencies[word] = (word_frequencies[word]/maximum_frequncy)
+    word_frequencies[word] = (word_frequencies[word] / maximum_frequency)
 
 sentence_scores = {}
 for sent in sentence_list:
