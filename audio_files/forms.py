@@ -11,4 +11,3 @@ class AudioFileForm(ModelForm):
         widgets = {
             'audio_file': AudioFileWidget(url='audio-file-api-create'),
         }
-
