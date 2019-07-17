@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
+    'bootstrap3',
+    'audio_files',
+    'audio_recorder',
 
 ]
 
@@ -120,6 +124,7 @@ STATICFILES_DIRS = (
 # Media Settings
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+AUDIO_ROOT = MEDIA_ROOT + '/audio'
 
 # Variable to set default login/logout url
 

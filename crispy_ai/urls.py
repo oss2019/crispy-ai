@@ -24,7 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
     path('', include('baseApp.urls')),
-    path('crispy_admin/', include('admin.urls'))
+    path('crispy_admin/', include('admin.urls')),
+    path('audio/', include('audio_files.urls'))
 ]
 
 urlpatterns += staticfiles_urlpatterns()

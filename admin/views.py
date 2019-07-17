@@ -36,3 +36,4 @@ def create_lecture(request):
         form = CreateLectureForm()
     return render(request, 'admin/register_course.html', {'form': form})
 
+
