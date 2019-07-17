@@ -2,14 +2,9 @@
 
 [![Issues](https://img.shields.io/github/issues-closed/oss2019/crispy-ai.svg?style=flat-square)](https://github.com/oss2019/crispy-ai/issues) [![Pull Requests](https://img.shields.io/github/issues-pr-closed/oss2019/crispy-ai.svg?style=flat-square)](https://github.com/oss2019/crispy-ai/pulls) [![License](https://img.shields.io/apm/l/vim-mode.svg?style=flat-square)](https://github.com/oss2019/crispy-ai/blob/master/LICENSE) [![Gitter](https://img.shields.io/badge/chat-on%20gitter-ff006f.svg?style=flat-square)](https://gitter.im/oss2019/community)
 
-Meet Crispy! Your intelligent companion that sits your lectures for you and organizes classroom taught content into short and concise modules.
-She also tries to provide you with live subtitles turning your classroom experience into a [BH]ollywood blockbuster
-
-<p align="center"> <img width="500" src="images/195.jpg"> </p>
-
 # New Dev Branch : Recorder
 
-- Do work on the branch - 'recorder' and submit all your prs to it
+- Do work with the branch:`recorder` and submit all your prs to it
 - If you have an alternate bug free recorder that can work with django - please do submit a PR :) in a new branch
 
 ## Quick Fix(Do this in your venv only!): 
@@ -17,6 +12,13 @@ She also tries to provide you with live subtitles turning your classroom experie
 -  Navigate to `venv/lib/python3.6/site-packages/django/forms/boundfield.py`
 and **delete** `line 93: renderer=self.form.renderer` to ensure the server recorder works.
 - This is a quick fix until an alternative is discovered to get the recorder widget work. Issue: Django render() method was changed from v2.x onwards
+
+Meet Crispy! Your intelligent companion that sits your lectures for you and organizes classroom taught content into short and concise modules.
+She also tries to provide you with live subtitles turning your classroom experience into a [BH]ollywood blockbuster
+
+<p align="center"> <img width="500" src="images/195.jpg"> </p>
+
+
 ## Features
 Crispy has bunch of cool features to aid you. [Check them out here](features.md) and feel free to add some more to list through a PR!
 
