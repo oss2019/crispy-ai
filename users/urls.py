@@ -10,8 +10,6 @@ urlpatterns = [
     path('profile/', views.profile, name='profile'),
     path('course/', views.course_display, name='course_display'),
     path('course/lectures/', views.lecture_display, name='lecture_display'),
-    path('^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
-        views.activate,
-        name='activate'),
-
+    path(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+         views.activate, name='activate'),
 ]
