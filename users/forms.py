@@ -2,6 +2,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from django.contrib.auth.models import User
 from .models import ProfileModel
+from django.forms import ValidationError
 
 
 class UserRegisterForm(UserCreationForm):
@@ -10,6 +11,19 @@ class UserRegisterForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
+
+    def clean(self):
+        cleaned_data = super(UserRegisterForm, self).clean()
+
+        try:
+            email = cleaned_data['email']
+        except KeyError:
+            raise ValidationError("")
+
+        if email and User.objects.filter(email=email).count() > 0:
+            raise ValidationError(u"Email already exists.")
+
+        return cleaned_data
 
 
 class UserUpdateForm(forms.ModelForm):

@@ -1,4 +1,14 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
+from django.core.mail import send_mail
+from django.forms import ValidationError
+from django.contrib.auth.models import User
+from django.contrib.sites.shortcuts import get_current_site
+from django.template.loader import render_to_string
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.utils.encoding import force_bytes, force_text
+from .tokens import account_activation_token
+from crispy_ai.settings import EMAIL_HOST_USER
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from validate_email import validate_email
@@ -15,21 +25,43 @@ def home(request):
 
 
 def register_user(request):
-    form = UserRegisterForm()
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
             email = form.cleaned_data.get('email')
-            is_valid = validate_email(email)
-            if is_valid:
-                username = form.cleaned_data.get('username')
-                messages.success(request, 'Account Created for' + username)
-                form.save()
-                return redirect('Home')
-
-    # if invalid, refill form
+            user = form.save(commit=False)
+            user.is_active = False
+            user.save()
+            current_site = get_current_site(request)
+            subject = 'Activate Your Crispy AI Account'
+            message = render_to_string('registration/account_activation_email.html', {
+                'user': user,
+                'domain': current_site.domain,
+                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                'token': account_activation_token.make_token(user),
+            })
+            from_mail = EMAIL_HOST_USER
+            to_mail = [user.email]
+            send_mail(subject, message, from_mail, to_mail, fail_silently=False)
+            return render(request, 'registration/email_sent.html')
+    else:
+        form = UserRegisterForm()
     return render(request, 'registration/register.html', {'form': form})
 
+
+# when user click on email link then this function execute
+def activate(request, uidb64, token):
+    try:
+        uid = force_text(urlsafe_base64_decode(uidb64))
+        user = User.objects.get(pk=uid)
+    except (TypeError, ValueError, OverflowError, User.DoesNotExist):
+        user = None
+    if user is not None and account_activation_token.check_token(user, token):
+        user.is_active = True
+        user.save()
+        return render(request, 'registration/account_activated.html')
+    else:
+        return render(request, 'registration/account_activation_invalid.html')
 
 @login_required(login_url="/users/login/")
 def profile(request):
