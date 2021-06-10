@@ -1,4 +1,4 @@
-Django==2.2.3
+Django==2.2.24
 django-crispy-forms==1.7.2
 Pillow==6.1.0
 py3dns==3.2.0
